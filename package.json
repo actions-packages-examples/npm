@@ -1,0 +1,23 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "Example for creating, building, and publishing an NPM package to GitHub Packages using GitHub Actions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && node index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actions-packages-examples/npm.git"
+  },
+  "keywords": [],
+  "author": "actions-packages-examples",
+  "license": "The Hippocratic License",
+  "bugs": {
+    "url": "https://github.com/actions-packages-examples/npm/issues"
+  },
+  "homepage": "https://github.com/actions-packages-examples/npm#readme",
+  "devDependencies": {
+    "standard": "*"
+  }
+}
