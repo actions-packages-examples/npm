@@ -19,5 +19,8 @@
   "homepage": "https://github.com/actions-packages-examples/npm#readme",
   "devDependencies": {
     "standard": "*"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
   }
 }
