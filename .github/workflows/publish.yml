@@ -23,9 +23,16 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://npm.pkg.github.com/
+          registry-url: 'https://npm.pkg.github.com'
           scope: '@actions-packages-examples'
+        env: 
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: npm ci
-      - run: npm publish
+      - name: Publish to GitHub Package Registry
+        run: |
+          # Authenticate | https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages
+          echo "//npm.pkg.github.com/:_authToken=${{secrets.GITHUB_TOKEN}}" > ~/.npmrc
+
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
